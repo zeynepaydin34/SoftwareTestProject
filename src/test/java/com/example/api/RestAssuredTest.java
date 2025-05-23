@@ -23,11 +23,8 @@ public class RestAssuredTest {
                 .log().all()
                 .statusCode(200)
                 .body("size()", greaterThan(0))
-                .body("[0].userId", notNullValue())
                 .body("[0].userId", equalTo(1))
-                .body("[0].title", notNullValue())
                 .body("[0].title", equalTo("delectus aut autem"))
-                .body("[0].completed", notNullValue())
                 .body("[0].completed", equalTo(false))
                 .extract()
                 .time();
